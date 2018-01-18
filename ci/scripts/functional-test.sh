@@ -4,7 +4,7 @@ ls -las
 
 if [ -d tests ]; then
 	chmod 777 tests
-	rmdir tests
+	rm -rf tests
 	mkdir tests
 fi
 ls -ltr
