@@ -6,7 +6,7 @@ pipeline {
       steps {
 			parallel(
 				NewmanAPI: {
-					slackSend color: "67bc73", message: "Starting *API Testing* Job"
+					slackSend color: "229954", message: "Starting *API Testing* Job"
 					
 					slackSend color: "cceef9", message: "`Starting API Test Execution` Job Details: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
 					slackSend color: "cceef9", message: "`Creating Node Docker container for Postman / Newman CLI`"					
