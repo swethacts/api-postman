@@ -6,11 +6,13 @@ pipeline {
       steps {
 			parallel(
 				NewmanAPI: {
-					slackSend color: "cceef9", message: "`Creating Node Docker container for Postman`"
-					slackSend color: "cceef9", message: "`Starting API Test Execution. Job Details: ${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
+					slackSend color: "67bc73", message: "Starting *API Testing* Job"
+					
+					slackSend color: "cceef9", message: "`Starting API Test Execution` Job Details: ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+					slackSend color: "cceef9", message: "`Creating Node Docker container for Postman / Newman CLI`"					
 							
 					sh '''
-						echo "Starting"
+						echo "Starting Newman"
 						chmod 777 ./ci/scripts/functional-test.sh
 						./ci/scripts/functional-test.sh
 					'''
@@ -18,8 +20,10 @@ pipeline {
 
 					junit 'tests/*.xml'		
 					sh 'echo "Complete"'
-					slackSend color: "cceef9", message: "`API Test Execution Complete. Job URL:` (<${env.BUILD_URL}|Open>)"
-					slackSend color: "cceef9", message: "`Destroying Docker container`"		
+					
+					slackSend color: "cceef9", message: "`Destroying Docker container`"
+					slackSend color: "cceef9", message: "`API Test Execution Complete` Job URL: (<${env.BUILD_URL}|Open>)"
+							
 				},
 				Notifications: {
 					sh 'echo "testing"'		
