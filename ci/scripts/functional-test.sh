@@ -2,8 +2,11 @@
 set -e -x
 ls -las
 
-mkdir tests
-chmod 777 tests
+if [ -d tests ]; then
+	chmod 777 tests
+	rmdir tests
+	mkdir tests
+fi
 ls -ltr
 
 cd src/test/api
