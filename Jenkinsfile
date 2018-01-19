@@ -23,7 +23,9 @@ pipeline {
 					
 					slackSend color: "cceef9", message: "`Destroying Docker container`"
 					slackSend color: "cceef9", message: "`API Test Execution Complete` Job URL: (<${env.BUILD_URL}|Open>)"
-							
+					
+					slackSend color: "229954", message: "```End of pipeline```"
+					
 				},
 				Notifications: {
 					sh 'echo "Notify"'	
@@ -32,7 +34,7 @@ pipeline {
 					sh 'sleep 1'
 					slackSend color: "2196F3", message: "TestCase 1: *PASSED*"
 					
-					slackSend color: "229954", message: "```End of pipeline```"
+					
 				}
 			)
 		}	 
