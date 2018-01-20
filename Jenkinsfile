@@ -1,3 +1,6 @@
+def testreport = 'testReport'
+def testresultsurl = ${env.BUILD_URL} ${testreport}
+
 pipeline {
   agent none
   stages {
@@ -22,9 +25,9 @@ pipeline {
 					sh 'echo "Complete"'
 					
 					slackSend color: "cceef9", message: "`Destroying Docker container`"
-					slackSend color: "cceef9", message: "`API Test Execution Complete` Job URL: (<${env.BUILD_URL}|Open>)"
+					slackSend color: "cceef9", message: "`API Test Execution Complete` Job URL: (<${env.BUILD_URL}|Open>) (<${testresultsurl} |Test Results>) "
 					
-					slackSend color: "229954", message: "```End of pipeline```"
+					slackSend color: "229954", message: "```End of automation pipeline```"
 					
 				},
 				Notifications: {
