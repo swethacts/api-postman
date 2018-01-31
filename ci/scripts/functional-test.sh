@@ -3,11 +3,13 @@ set -e -x
 ls -las
 
 if [ -d tests ]; then
+	echo "Deleting tests folder"
 	chmod 777 tests
 	rm -rf tests
 	mkdir tests
-else
-	mkdir tests
+#else
+#	echo "Creating tests folder"
+#	mkdir tests
 fi
 ls -ltr
 
