@@ -6,6 +6,8 @@ if [ -d tests ]; then
 	chmod 777 tests
 	rm -rf tests
 	mkdir tests
+else
+	mkdir tests
 fi
 ls -ltr
 
