@@ -2,12 +2,15 @@
 set -e -x
 ls -las
 
-TESTDIR="tests"
-if [ -d "$TESTDIR" ]; then	
-	chmod 777 tests
-	rm -rf tests
-	mkdir tests
-fi
+#TESTDIR="tests"
+#if [ -d "$TESTDIR" ]; then	
+#	chmod 777 tests
+#	rm -rf tests
+#	mkdir tests
+#fi
+
+mkdir tests
+chmod 777 tests
 
 ls -ltr
 
