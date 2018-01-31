@@ -3,9 +3,7 @@ set -e -x
 ls -las
 
 TESTDIR="tests"
-if [ -d "$TESTDIR" ];
-then
-	echo "Deleting tests folder"
+if [ -d "$TESTDIR" ]; then	
 	chmod 777 tests
 	rm -rf tests
 	mkdir tests
@@ -35,6 +33,11 @@ rm temp.txt
 ls -ltr
 
 cp *.xml ../../../../../tests
+
+
+cd ../../../../../
+pwd
+cd tests
 ls -ltr
 
 if [ "$TEST_FAILURE" -eq 1 ]; then
