@@ -2,9 +2,8 @@
 set -e -x
 ls -las
 
-testdir = "tests"
-
-if [ -d "$testdir" ]
+TESTDIR="tests"
+if [ -d "$TESTDIR" ];
 then
 	echo "Deleting tests folder"
 	chmod 777 tests
