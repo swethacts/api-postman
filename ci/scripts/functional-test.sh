@@ -10,7 +10,6 @@ ls -las
 #fi
 
 mkdir tests
-chmod 777 tests
 
 ls -ltr
 
