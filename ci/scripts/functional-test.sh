@@ -9,7 +9,15 @@ ls -las
 #	mkdir tests
 #fi
 
+if [ -f tests ]; then
+    chmod 777 tests
+    rm tests
+    echo "Deleted the file"
+fi
+
+ls -las
 mkdir tests
+ls -las
 
 ls -ltr
 
