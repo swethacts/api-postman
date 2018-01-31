@@ -17,7 +17,7 @@ if [ -f tests ]; then
 
 if [ -d tests ]; then
     chmod 777 tests
-    rm -rf dir
+    rm -rf tests
     echo "Deleted the folder"
 fi
 
