@@ -13,7 +13,14 @@ if [ -f tests ]; then
     chmod 777 tests
     rm tests
     echo "Deleted the file"
+
+
+if [ -d tests ]; then
+    chmod 777 tests
+    rm -rf dir
+    echo "Deleted the folder"
 fi
+
 
 ls -las
 mkdir tests
