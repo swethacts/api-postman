@@ -2,7 +2,10 @@
 set -e -x
 ls -las
 
-if [ -d tests ]; then
+testdir = "tests"
+
+if [ -d "$testdir" ]
+then
 	echo "Deleting tests folder"
 	chmod 777 tests
 	rm -rf tests
@@ -10,6 +13,7 @@ fi
 
 echo "Creating tests folder"
 mkdir tests
+chmod 777 tests
 
 ls -ltr
 
