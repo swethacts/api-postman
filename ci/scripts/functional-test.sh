@@ -6,11 +6,11 @@ if [ -d tests ]; then
 	echo "Deleting tests folder"
 	chmod 777 tests
 	rm -rf tests
-	mkdir tests
-#else
-#	echo "Creating tests folder"
-#	mkdir tests
 fi
+
+echo "Creating tests folder"
+mkdir tests
+
 ls -ltr
 
 cd src/test/api
