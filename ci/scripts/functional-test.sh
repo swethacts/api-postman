@@ -8,11 +8,8 @@ then
 	echo "Deleting tests folder"
 	chmod 777 tests
 	rm -rf tests
+	mkdir tests
 fi
-
-echo "Creating tests folder"
-mkdir tests
-chmod 777 tests
 
 ls -ltr
 
