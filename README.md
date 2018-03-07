@@ -12,4 +12,4 @@ newman run collections/git.postman_collection.json --environment collections/new
 ```
 
 ## More Info
-For more information on newman cli, visit the [newman page](https://www.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman)
+For more information on newman cli, visit the site [newman page](https://www.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman)
