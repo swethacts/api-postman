@@ -2,6 +2,9 @@
 set -e -x
 ls -las
 
+PASSED_TESTS=1
+TOTAL_TESTS=1
+
 #TESTDIR="tests"
 #if [ -d "$TESTDIR" ]; then	
 #	chmod 777 tests
@@ -57,7 +60,22 @@ pwd
 cd tests
 ls -ltr
 
-if [ "$TEST_FAILURE" -eq 1 ]; then
-	echo "Exiting with exit code 1..."
+#if [ "$TEST_FAILURE" -eq 1 ]; then
+#	echo "Exiting with exit code 1..."
+#	exit 1
+#fi
+
+
+
+THRESHOLD=$API_TEST_THRESHOLD
+PASSED_TESTS_PERCENT=$((PASSED_TESTS*100))
+PASS_RATE=$(( PASSED_TESTS_PERCENT / TOTAL_TESTS ))
+echo "Pass Rate is "$PASS_RATE
+
+if [ "$PASS_RATE" -ge "$THRESHOLD" ]
+then
+	echo "Pass Rate is greater than or equal to Threshold set. ci-cd pipeline will continue to execute further"	
+else
+	echo "Pass Rate is lower than Threshold, this build will fail now. ci-cd pipeline will not continue to execute further"
 	exit 1
 fi
