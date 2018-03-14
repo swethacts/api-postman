@@ -75,8 +75,8 @@ echo "Pass Rate is "$PASS_RATE
 
 if [ "$PASS_RATE" -ge "$THRESHOLD" ]
 then
-	echo "Pass Rate:"$PASS_RATE " is greater than or equal to expected Threshold: "$THRESHOLD ".ci-cd pipeline will continue to execute further"	
+	echo "Pass Rate:"$PASS_RATE "is greater than or equal to expected Threshold:"$THRESHOLD ".ci-cd pipeline will continue to execute further"	
 else
-	echo "Pass Rate:"$PASS_RATE " is less than expected Threshold: "$THRESHOLD ".ci-cd pipeline will not continue to execute further"
+	echo "Pass Rate:"$PASS_RATE "is less than expected Threshold:"$THRESHOLD ".ci-cd pipeline will not continue to execute further"
 	exit 1
 fi
