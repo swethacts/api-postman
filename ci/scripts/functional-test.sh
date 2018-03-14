@@ -73,9 +73,6 @@ PASSED_TESTS_PERCENT=$((PASSED_TESTS*100))
 PASS_RATE=$(( PASSED_TESTS_PERCENT / TOTAL_TESTS ))
 echo "Pass Rate is "$PASS_RATE
 
-slackSend color: "cceef9", message: "`container`"
-
-
 if [ "$PASS_RATE" -ge "$THRESHOLD" ]
 then
 	echo "Pass Rate:"$PASS_RATE " is greater than or equal to expected Threshold: "$THRESHOLD ".ci-cd pipeline will continue to execute further"	
