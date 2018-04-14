@@ -15,7 +15,10 @@ pipeline {
 						echo "Starting Newman"
 						chmod 777 ./ci/scripts/functional-test.sh
 						./ci/scripts/functional-test.sh
+            sleep 5
 					'''
+
+
 					slackSend color: "cceef9", message: "`Archieving test results...`"
 
 					junit 'tests/*.xml'
