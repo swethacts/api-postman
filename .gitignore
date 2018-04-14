@@ -1,0 +1,3 @@
+src/test/api/testresults/junit/*.xml
+src/test/api/testresults/unformatted/*.xml
+src/test/api/testresults/unformatted/*.html
