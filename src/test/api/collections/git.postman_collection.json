@@ -15,15 +15,19 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"var usersURL = \"https://api.github.com/users/jogijatin15\"\r",
-							"tests[\"Testcase 1 - Gets the correct users url\"] = jsonData.url === usersURL;"
+							"var jsonData = JSON.parse(responseBody);",
+							"var usersURL = \"https://api.github.com/users/jogijatin15\"",
+							"tests[\"Testcase 1 - Validate github's user's url\"] = jsonData.url === usersURL;",
+							"tests[\"Testcase 2 - Valite the user's login name\"] = jsonData.login === postman.getEnvironmentVariable(\"githubuser\");",
+							"tests[\"Testcase 3 - Validate the user's login id\"] = jsonData.id === 17865993;",
+							"tests[\"Testcase 4 - Validate that type of github account\"] = jsonData.type === \"User\";",
+							"tests[\"Testcase 5 - Validate the user's html url \"] = jsonData.html_url === \"https://github.com/jogijatin15\";"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "{{githubapi}}/jogijatin15",
+				"url": "{{githubapi}}/{{githubuser}}",
 				"method": "GET",
 				"header": [],
 				"body": {},
