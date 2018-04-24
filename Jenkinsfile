@@ -15,7 +15,7 @@ pipeline {
 						echo "Starting Newman"
 						chmod 777 ./ci/scripts/functional-test.sh
 						./ci/scripts/functional-test.sh
-            sleep 5
+            sleep 8
 					'''
 
 
