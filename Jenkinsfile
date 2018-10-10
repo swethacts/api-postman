@@ -2,7 +2,7 @@ pipeline {
   agent none
   stages {
     stage('API Testing') {
-	  agent { docker 'node:7' }
+	  agent { docker 'atin/test:first' }
       steps {
 			parallel(
 				NewmanAPI: {
@@ -37,21 +37,7 @@ pipeline {
 					sh 'sleep 1'
 					slackSend color: "2196F3", message: "TestCase 1: *PASSED*"
 
-          slackSend color: "78909C", message: "Executing TestCase 2: *Get /login returns user's login name with 200 response code*"
-					sh 'sleep 1'
-					slackSend color: "2196F3", message: "TestCase 2: *PASSED*"
-
-          slackSend color: "78909C", message: "Executing TestCase 3: *Get /id returns user's id with 200 response code*"
-					sh 'sleep 1'
-					slackSend color: "2196F3", message: "TestCase 3: *PASSED*"
-
-          slackSend color: "78909C", message: "Executing TestCase 4: *Get /type returns account type with 200 response code*"
-					sh 'sleep 1'
-					slackSend color: "2196F3", message: "TestCase 4: *PASSED*"
-
-          slackSend color: "78909C", message: "Executing TestCase 5: *Get /url returns account's html url with 200 response code*"
-					sh 'sleep 1'
-          slackSend color: "2196F3", message: "TestCase 5: *PASSED*"
+        
 
 				}
 			)
