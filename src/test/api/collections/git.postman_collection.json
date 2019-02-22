@@ -16,7 +16,7 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
-							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=testuser"",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=testuser\"",
 							"tests[\"Testcase 1 - Validate Test User\"] = jsonData === true"								
 						]
 					}
@@ -46,7 +46,7 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData1 = JSON.parse(responseBody);",
-							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=admin"",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=admin\"",
 							"tests[\"Testcase 2 - Validate Admin User\"] = jsonData1 === true"						
 						]
 					} 
@@ -76,7 +76,7 @@
 						"type": "text/javascript",
 						"exec": [
 							"var jsonData2 = JSON.parse(responseBody);",
-							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/1/"",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/1/\"",
 							"tests[\"Testcase 3 - Validate Admin Role\"] = jsonData2.role === \"ADMIN\"",						
 							"tests[\"Testcase 4 - Get User Name\"] = jsonData2.name === \"Administrator\""	
 						]
