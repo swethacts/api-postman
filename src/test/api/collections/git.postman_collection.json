@@ -8,24 +8,91 @@
 	},
 	"item": [
 		{
-			"name": "getUser",
+			"name": "validateTestUser",
+			"event": [
+				{ 
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=testuser"",
+							"tests[\"Testcase 1 - Validate Test User\"] = jsonData === true"								
+						]
+					}
+				}
+			],   
+			"request": {
+				"url": "{{appapi}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46dGVzdDEyMw==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "validateAdminUser",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"var usersURL = \"https://api.github.com/users/jogijatin15\"\r",
-							"tests[\"Testcase 1 - Gets the correct users url\"] = jsonData.url === usersURL;"
+							"var jsonData1 = JSON.parse(responseBody);",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/username-check?username=admin"",
+							"tests[\"Testcase 2 - Validate Admin User\"] = jsonData1 === true"						
 						]
-					}
+					} 
 				}
-			],
+			], 
 			"request": {
-				"url": "{{githubapi}}/jogijatin15",
+				"url": "{{appapinew}}",
+				"method": "GET",			
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46dGVzdDEyMw==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "appapiadminrole",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData2 = JSON.parse(responseBody);",
+							"var usersURL = \"http://ec2-3-17-187-0.us-east-2.compute.amazonaws.com:3000/api/users/1/"",
+							"tests[\"Testcase 3 - Validate Admin Role\"] = jsonData2.role === \"ADMIN\"",						
+							"tests[\"Testcase 4 - Get User Name\"] = jsonData2.name === \"Administrator\""	
+						]
+					} 
+				}
+			], 
+			"request": {
+				"url": "{{appapiadminrole}}",
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46dGVzdDEyMw==",
+						"description": ""
+					}
+				],
 				"body": {},
 				"description": ""
 			},
@@ -33,3 +100,4 @@
 		}
 	]
 }
+
