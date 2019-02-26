@@ -16,10 +16,12 @@ pipeline {
 						chmod 777 ./ci/scripts/functional-test.sh
 						./ci/scripts/functional-test.sh
 					'''
+					sh 'sleep 15'
+					
 					slackSend color: "cceef9", message: "`Archieving test results...`"
 
 					junit 'tests/*.xml'
-					sh 'sleep 20'
+					
 					sh 'echo "Complete"'
 					
 					slackSend color: "cceef9", message: "`Destroying Docker container`"
