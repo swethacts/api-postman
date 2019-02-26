@@ -30,7 +30,7 @@ pipeline {
 				},
 				Notifications: {
 					sh 'echo "Notify"'	
-					sh 'sleep 6'
+					sh 'sleep 8'
 					slackSend color: "78909C", message: "Executing TestCase 1: *Validate Test User*"
 					sh 'sleep 8'
 					slackSend color: "2196F3", message: "TestCase 1: *PASSED*"
