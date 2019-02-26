@@ -16,7 +16,7 @@ pipeline {
 						chmod 777 ./ci/scripts/functional-test.sh
 						./ci/scripts/functional-test.sh
 					'''
-					sh 'sleep 6'
+					sh 'sleep 10'
 					
 					slackSend color: "cceef9", message: "`Archieving test results...`"
 
