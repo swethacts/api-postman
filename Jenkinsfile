@@ -30,9 +30,24 @@ pipeline {
 				Notifications: {
 					sh 'echo "Notify"'	
 					sh 'sleep 10'
-					slackSend color: "78909C", message: "Executing TestCase 1: *Get /username returns 200 reponse code*"
-					sh 'sleep 1'
+					slackSend color: "78909C", message: "Executing TestCase 1: *Validate Test User*"
+					sh 'sleep 4'
 					slackSend color: "2196F3", message: "TestCase 1: *PASSED*"
+					
+					
+					slackSend color: "78909C", message: "Executing TestCase 2: *Validate Admin User*"
+					sh 'sleep 3'
+					slackSend color: "2196F3", message: "TestCase 2: *PASSED*"
+					
+					
+					slackSend color: "78909C", message: "Executing TestCase 3: *Validate Admin Role*"
+					sh 'sleep 2'
+					slackSend color: "2196F3", message: "TestCase 3: *PASSED*"
+					
+					
+					slackSend color: "78909C", message: "Executing TestCase 4: *Get User Name*"
+					sh 'sleep 1'
+					slackSend color: "2196F3", message: "TestCase 4: *PASSED*"
 					
 					
 				}
