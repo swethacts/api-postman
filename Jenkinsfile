@@ -19,7 +19,7 @@ pipeline {
 					slackSend color: "cceef9", message: "`Archieving test results...`"
 
 					junit 'tests/*.xml'
-					sh 'sleep 10'
+					sh 'sleep 20'
 					sh 'echo "Complete"'
 					
 					slackSend color: "cceef9", message: "`Destroying Docker container`"
@@ -30,19 +30,19 @@ pipeline {
 				},
 				Notifications: {
 					sh 'echo "Notify"'	
-					sh 'sleep 8'
+					sh 'sleep 6'
 					slackSend color: "78909C", message: "Executing TestCase 1: *Validate Test User*"
-					sh 'sleep 8'
+					sh 'sleep 2'
 					slackSend color: "2196F3", message: "TestCase 1: *PASSED*"
 					
 					
 					slackSend color: "78909C", message: "Executing TestCase 2: *Validate Admin User*"
-					sh 'sleep 6'
+					sh 'sleep 2'
 					slackSend color: "2196F3", message: "TestCase 2: *PASSED*"
 					
 					
 					slackSend color: "78909C", message: "Executing TestCase 3: *Validate Admin Role*"
-					sh 'sleep 4'
+					sh 'sleep 2'
 					slackSend color: "2196F3", message: "TestCase 3: *PASSED*"
 					
 					
